@@ -33,25 +33,25 @@ def lintChecks() {
         }
 }
 
-def testCases() {
- parallel(
-                "UNIT": {
-                    stage("Unit Testing") {
-                        echo "Unit Testing Compleyed"
-                           }
-                     },
-               "INTEGRATION": {
-                    stage("Integration Testing") {
-                        echo "Integration Testing"
-                           }
-                    },
-               "FUNCTIONAL": {
-                    stage("Functional Testing") {
-                        echo "Functional Testing"
-                           }
-                    },
-                )
-        }       
+// def testCases() {
+//  parallel(
+//                 "UNIT": {
+//                     stage("Unit Testing") {
+//                         echo "Unit Testing Compleyed"
+//                            }
+//                      },
+//                "INTEGRATION": {
+//                     stage("Integration Testing") {
+//                         echo "Integration Testing"
+//                            }
+//                     },
+//                "FUNCTIONAL": {
+//                     stage("Functional Testing") {
+//                         echo "Functional Testing"
+//                            }
+//                     },
+//                 )
+//         }       
 
 def artifacts() {
         stage('Check Artifacts') {
@@ -145,24 +145,24 @@ def artifacts() {
 
 
 // Scripted Pipeline Reference
-// def testCases() {
-//         stage('Test Cases') {
-//           parallel {
-//                 stage('Unit Testing') {                 
-//                     steps {
-//                          sh "echo Unit Testing Completed"   
-//                            }
-//                        }
-//                 stage('Integration Testing') {                 
-//                     steps {
-//                          sh "echo Integration Testing Completed"   
-//                          }
-//                     }
-//                 stage('Function Testing') {                 
-//                       steps {
-//                         sh "echo Function Testing Completed"   
-//                                 }
-//                         }
-//                 }         
-//         }
-// }
+def testCases() {
+        stage('Test Cases') {
+          parallel {
+                stage('Unit Testing') {                 
+                    steps {
+                         sh "echo Unit Testing Completed"   
+                           }
+                       }
+                stage('Integration Testing') {                 
+                    steps {
+                         sh "echo Integration Testing Completed"   
+                         }
+                    }
+                stage('Function Testing') {                 
+                      steps {
+                        sh "echo Function Testing Completed"   
+                                }
+                        }
+                }         
+        }
+}
