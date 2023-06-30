@@ -6,7 +6,7 @@ def call() {
         env.ARGS="-Dsonar.java.binaries=target/"
         common.sonarChecks()   
         common.testCases()
-        env.SONARURL = "172.31.92.95"
+        env.SONARURL = "sonar.robot.internal"
         env.NEXUSURL = "172.31.2.247"
         if(env.TAG_NAME != null ) {
             common.artifacts()
