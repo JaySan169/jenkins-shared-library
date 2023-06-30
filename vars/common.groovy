@@ -2,7 +2,7 @@ def sonarChecks() {
    stage('Sonar Checks') {
         sh "echo Starting Code Quality Analysis"
         sh "sonar-scanner -Dsonar.host.url=http://sonar.robot.internal:9000 -Dsonar.login=admin -Dsonar.password=password -Dsonar.projectKey=${COMPONENT} ${ARGS}"
-        sh "bash -x sonar-quality-gate admin password sonar.robot.internal ${COMPONENT}" 
+        sh "bash -x sonar-quality-gate.sh admin password sonar.robot.internal ${COMPONENT}" 
         sh "echo Code Quality Analysis is Completed"
    }
 }
