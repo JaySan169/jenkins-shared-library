@@ -6,7 +6,7 @@ def call() {
         env.ARGS="-Dsonar.sources=."
         common.sonarChecks()   
         common.testCases()
-        env.SONARURL = "18.205.150.116"
+        env.SONARURL = "172.31.92.95"
         env.NEXUSURL = "172.31.2.247"
         if(env.TAG_NAME != null ) {
             common.artifacts()
