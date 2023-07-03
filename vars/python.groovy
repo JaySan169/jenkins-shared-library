@@ -7,7 +7,7 @@ def call() {
         common.sonarChecks()   
         common.testCases()
         env.SONARURL = "sonar.robot.internal"
-        env.NEXUSURL = "nexus.robot.internal"
+        env.NEXUSURL = "172.31.93.108"
         env.NEXUS = credentials ('NEXUS-CRED')
         // common.artifacts()
         if(env.TAG_NAME != null ) {
